@@ -12,7 +12,8 @@
 <body>
   <p>Check it out you can embed video too!</p>
   <br />
-  <iframe width="560" height="315" src="https://www.youtube.com/watch?v=FVgkWii5JdM&t=18s" frameborder="0" allowfullscreen></iframe>
-  </iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FVgkWii5JdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
 </html>
+
+
