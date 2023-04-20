@@ -1,0 +1,1 @@
+2023-04-10 12:37:32	-	zahra_04102023	-	93bc5811603c287c766a0ff7e03b5b41f4483895	285a3ad0-b032-4839-ad1b-2d45d6393ded	nextflow run nf-core/methylseq -r 2.3.0 -name zahra_04102023 -profile docker -resume -params-file /mnt/aagaardlab1_powervault/jochum00/zahra/PBAT/resources/nf-params.json

@@ -1,62 +1,14 @@
-#import the data
-df<-as_tibble(read.table("patient-metadata_mdj.txt",sep = "\t",header = T,stringsAsFactors = T))%>%
-  select(-COVID19_categorical)
-df
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages FOR FREE MAX.</p>
 
-library(mosaic)
-df<-df%>%mutate(gravity=as.factor(gravity),
-            parity=as.factor(parity),
-            COVID19_ordered=as.factor(COVID19_ordered))
+<title>HTML Video embed</title>
+<p>Check it out you can embed video too!</p>
+<br />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FVgkWii5JdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-df0<-df%>%mutate(across(-c(cohort),as.numeric))
-
-df0
-
-df2
-
-#remove the age column (numeric) and pivot everything longer
-df2<-df%>%
-  select(-c(age))%>%
-  pivot_longer(cols = -c(sampleid,cohort),names_to = "condition",values_to = "response")
-
-df2# A tibble: 208 x 3
-#remove the NA columns
-df2<-df2%>%filter(!is.na(response))
-df2# A tibble: 200 x 3
-
-
-df3<-df2%>%select(-sampleid)%>%mutate(condition=paste0(condition,"=",response))%>%select(-response)
-
-table(df3)
-df4
-
-df4<-as_tibble(tally(cohort~condition,data=df3,"data.frame")%>%filter(Freq>0))
-df4
-df5<-df4%>%pivot_wider(names_from = cohort,values_from = Freq,values_fill = 0)
-df6<-data.frame(df5%>%select(-condition))
-rownames(df6)<-df5$condition
-df7<-as.table(t(df6))
-p_vals<-lapply(rep(1:38), function(X) (chisq.test(df7[,X]))$p.value)
-pvals<-unlist(p_vals)
-df5$p.value<-pvals
-
-statistic<-lapply(rep(1:38), function(X) (chisq.test(df7[,X]))$statistic)
-statistic<-unlist(statistic)
-df5$xsquared<-statistic
-
-parameter<-lapply(rep(1:38), function(X) (chisq.test(df7[,X]))$parameter)
-parameter<-unlist(parameter)
-df5$df<-parameter
-
-df5
-
-
-res<-df2%>%select(-c(sampleid,cohort))%>%distinct_all()
-res#38 x2
-df5
-res<-df5%>%separate(col = condition,into = c("variable","response"),sep = "=",remove = FALSE)
-res
-
-TukeyHSD(aov(lm(age~cohort,df)))
-favstats(cohort~age,df)
-write.table(res,"clinstats2.txt",sep = "\t",row.names = F)
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FVgkWii5JdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "input": "\/media\/jochum00\/Aagaard_Raid1\/jochum00\/zahra\/PBAT\/resources\/PBAT_samplesheet.csv",
+    "outdir": "\/media\/jochum00\/Aagaard_Raid1\/jochum00\/zahra\/PBAT\/nf-core\/methylseq\/results\/",
+    "save_reference": true,
+    "save_align_intermeds": true,
+    "unmapped": true,
+    "save_trimmed": true,
+    "genome": "GRCm38",
+    "pbat": true
+}

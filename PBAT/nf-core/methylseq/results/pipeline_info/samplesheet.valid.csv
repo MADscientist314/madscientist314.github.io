@@ -1,0 +1,17 @@
+sample,single_end,fastq_1,fastq_2
+gDNA10_HET_26268_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA10_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA10_R2.fastq.gz
+gDNA11_HET_26271_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA11_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA11_R2.fastq.gz
+gDNA20_KO_26252_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA20_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA20_R2.fastq.gz
+gDNA26_KO_26249_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA26_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA26_R2.fastq.gz
+gDNA27_HET_26269_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA27_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA27_R2.fastq.gz
+gDNA29_KO_26248_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA29_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA29_R2.fastq.gz
+gDNA30_HET_26253_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA30_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA30_R2.fastq.gz
+gDNA33_KO_26250_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA33_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA33_R2.fastq.gz
+gDNA34_KO_26251_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA34_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA34_R2.fastq.gz
+gDNA44_WT_26346_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA44_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA44_R2.fastq.gz
+gDNA47_WT_26347_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA47_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA47_R2.fastq.gz
+gDNA48_WT_26348_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA48_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA48_R2.fastq.gz
+gDNA49_WT_26349_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA49_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA49_R2.fastq.gz
+gDNA50_WT_26350_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA50_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/gDNA50_R2.fastq.gz
+IV23122_WT_23122_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/IV_23122_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/IV_23122_R2.fastq.gz
+IV23123_WT_23123_T1,False,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/IV_23123_R1.fastq.gz,/media/jochum00/Aagaard_Raid1/jochum00/zahra/PBAT/concat/IV_23123_R2.fastq.gz

@@ -1,0 +1,8 @@
+{
+    "input": "\/mnt\/aagaardlab1_powervault\/jochum00\/zahra\/resources\/PBAT_samplesheet.csv",
+    "save_align_intermeds": true,
+    "unmapped": true,
+    "save_trimmed": true,
+    "genome": "GRCm38",
+    "pbat": true
+}

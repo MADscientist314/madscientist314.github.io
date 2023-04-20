@@ -1,0 +1,81 @@
+Apr-10 12:37:27.291 [main] DEBUG nextflow.cli.Launcher - $> nextflow run nf-core/methylseq -r 2.3.0 -name zahra_04102023 -profile docker -resume -params-file /mnt/aagaardlab1_powervault/jochum00/zahra/PBAT/resources/nf-params.json
+Apr-10 12:37:27.366 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.7
+Apr-10 12:37:27.400 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/jochum00/.nextflow/plugins; core-plugins: nf-amazon@1.11.4,nf-azure@0.14.2,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.4,nf-google@1.4.5,nf-tower@1.5.6,nf-wave@0.5.4
+Apr-10 12:37:27.423 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Apr-10 12:37:27.425 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Apr-10 12:37:27.430 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Apr-10 12:37:27.446 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Apr-10 12:37:27.468 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /home/jochum00/.nextflow/scm
+Apr-10 12:37:29.046 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/jochum00/.nextflow/assets/nf-core/methylseq/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/methylseq.git
+Apr-10 12:37:29.074 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Apr-10 12:37:29.087 [main] DEBUG nextflow.scm.AssetManager - Git config: /home/jochum00/.nextflow/assets/nf-core/methylseq/.git/config; branch: master; remote: origin; url: https://github.com/nf-core/methylseq.git
+Apr-10 12:37:30.258 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /home/jochum00/.nextflow/assets/nf-core/methylseq/nextflow.config
+Apr-10 12:37:30.259 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/jochum00/.nextflow/assets/nf-core/methylseq/nextflow.config
+Apr-10 12:37:30.282 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `docker`
+Apr-10 12:37:31.982 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [cfc_dev, ifb_core, test_ci, denbi_qbic, alice, mjolnir_globe, uppmax, uge, rosalind_uge, dev, lugh, unibe_ibu, vai, czbiohub_aws, jax, ccga_med, scw, tigem, google, ipop_up, googlels, eddie, medair, bi, bigpurple, sbc_sharc, adcra, cedars, ucl_myriad, utd_ganymede, charliecloud, icr_davros, ceres, munin, arm, rosalind, hasta, cfc, uzh, ebc, ku_sund_dangpu, ccga_dx, crick, marvin, biohpc_gen, shifter, mana, mamba, wehi, awsbatch, imperial, maestro, genotoul, abims, janelia, nihbiowulf, nu_genomics, googlebatch, oist, sahmri, mpcdf, leicester, vsc_ugent, sage, cambridge, podman, cheaha, xanadu, test, computerome, seg_globe, sanger, dkfz, pasteur, test_full, azurebatch, hki, crukmi, docker, engaging, gis, psmn, eva, fgcz, conda, crg, singularity, prince, utd_sysbio, debug, genouest, cbe, phoenix, gitpod, seawulf, uct_hpc, aws_tower, binac]
+Apr-10 12:37:31.992 [main] WARN  nextflow.config.ConfigBuilder - It appears you have never run this project before -- Option `-resume` is ignored
+Apr-10 12:37:32.050 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declararion
+Apr-10 12:37:32.050 [main] INFO  nextflow.cli.CmdRun - Launching `https://github.com/nf-core/methylseq` [zahra_04102023] DSL2 - revision: 93bc581160 [2.3.0]
+Apr-10 12:37:32.052 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins declared=[nf-amazon@1.11.4]
+Apr-10 12:37:32.052 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Apr-10 12:37:32.052 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-amazon@1.11.4]
+Apr-10 12:37:32.052 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 1.11.4
+Apr-10 12:37:32.065 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@1.11.4' resolved
+Apr-10 12:37:32.066 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@1.11.4'
+Apr-10 12:37:32.086 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@1.11.4
+Apr-10 12:37:32.107 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+Apr-10 12:37:32.117 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /home/jochum00/.nextflow/secrets/store.json
+Apr-10 12:37:32.122 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@61b838f2] - activable => nextflow.secret.LocalSecretsProvider@61b838f2
+Apr-10 12:37:32.206 [main] DEBUG nextflow.Session - Session UUID: 285a3ad0-b032-4839-ad1b-2d45d6393ded
+Apr-10 12:37:32.206 [main] DEBUG nextflow.Session - Run name: zahra_04102023
+Apr-10 12:37:32.206 [main] DEBUG nextflow.Session - Executor pool size: 48
+Apr-10 12:37:32.220 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=144; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Apr-10 12:37:32.249 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.7 build 5853
+  Created: 18-02-2023 20:32 UTC (14:32 CDT)
+  System: Linux 5.15.0-69-generic
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 17.0.6+10-Ubuntu-0ubuntu120.04.1
+  Encoding: UTF-8 (UTF-8)
+  Process: 3171951@aagaardlab1 [127.0.1.1]
+  CPUs: 48 - Mem: 329.2 GB (154.7 GB) - Swap: 2 GB (2 GB)
+Apr-10 12:37:32.268 [main] DEBUG nextflow.Session - Work-dir: /mnt/aagaardlab1_powervault/jochum00/zahra/PBAT/resources/work [ext2/ext3]
+Apr-10 12:37:32.301 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[AwsBatchExecutor]
+Apr-10 12:37:32.323 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Apr-10 12:37:32.474 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Apr-10 12:37:32.487 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 49; maxThreads: 1000
+Apr-10 12:37:32.713 [main] ERROR nextflow.cli.Launcher - Can't open cache DB: /mnt/aagaardlab1_powervault/jochum00/zahra/PBAT/resources/.nextflow/cache/285a3ad0-b032-4839-ad1b-2d45d6393ded/db
+
+Nextflow needs to be executed in a shared file system that supports file locks.
+Alternatively, you can run it in a local directory and specify the shared work
+directory by using the `-w` command line option.
+java.io.IOException: Can't open cache DB: /mnt/aagaardlab1_powervault/jochum00/zahra/PBAT/resources/.nextflow/cache/285a3ad0-b032-4839-ad1b-2d45d6393ded/db
+
+Nextflow needs to be executed in a shared file system that supports file locks.
+Alternatively, you can run it in a local directory and specify the shared work
+directory by using the `-w` command line option.
+	at nextflow.cache.DefaultCacheStore.openDb(DefaultCacheStore.groovy:99)
+	at nextflow.cache.DefaultCacheStore.open(DefaultCacheStore.groovy:106)
+	at nextflow.cache.DefaultCacheStore.open(DefaultCacheStore.groovy)
+	at nextflow.cache.CacheDB.open(CacheDB.groovy:59)
+	at nextflow.Session.init(Session.groovy:390)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:123)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:354)
+	at nextflow.cli.Launcher.run(Launcher.groovy:487)
+	at nextflow.cli.Launcher.main(Launcher.groovy:646)
+Caused by: java.io.UncheckedIOException: java.io.IOException: Input/output error
+	at java.base/java.nio.MappedMemoryUtils.force(MappedMemoryUtils.java:102)
+	at java.base/java.nio.Buffer$1.force(Buffer.java:839)
+	at java.base/jdk.internal.misc.ScopedMemoryAccess.forceInternal(ScopedMemoryAccess.java:337)
+	at java.base/jdk.internal.misc.ScopedMemoryAccess.force(ScopedMemoryAccess.java:325)
+	at java.base/java.nio.MappedByteBuffer.force(MappedByteBuffer.java:309)
+	at java.base/java.nio.MappedByteBuffer.force(MappedByteBuffer.java:250)
+	at org.iq80.leveldb.impl.MMapLogWriter.addRecord(MMapLogWriter.java:193)
+	at org.iq80.leveldb.impl.VersionSet.logAndApply(VersionSet.java:290)
+	at org.iq80.leveldb.impl.DbImpl.<init>(DbImpl.java:223)
+	at org.iq80.leveldb.impl.Iq80DBFactory.open(Iq80DBFactory.java:83)
+	at nextflow.cache.DefaultCacheStore.openDb(DefaultCacheStore.groovy:78)
+	... 8 common frames omitted
+Caused by: java.io.IOException: Input/output error
+	at java.base/java.nio.MappedMemoryUtils.force0(Native Method)
+	at java.base/java.nio.MappedMemoryUtils.force(MappedMemoryUtils.java:100)
+	... 18 common frames omitted
