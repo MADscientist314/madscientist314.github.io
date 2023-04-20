@@ -3,17 +3,12 @@
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages FOR FREE MAX.</p>
-</body>
-</html>
 
-<head>
-  <title>HTML Video embed</title>
-</head>
-<body>
-  <p>Check it out you can embed video too!</p>
-  <br />
+<title>HTML Video embed</title>
+<p>Check it out you can embed video too!</p>
+<br />
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FVgkWii5JdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FVgkWii5JdM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
 </html>
-
-
