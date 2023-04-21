@@ -1,0 +1,421 @@
+<!--
+  ~ Copyright 2013-2019, Centre for Genomic Regulation (CRG)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html>
+
+    <head>
+        <title>Nextflow Cytoscape.js with Dagre</title>
+
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+        <script type="text/javascript">
+        var prot = (("https:" == document.location.protocol) ? "https://" : "http://");
+        document.write(unescape("%3Cscript src='" + prot + "code.jquery.com/jquery-2.0.3.min.js' type='text/javascript' %3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='" + prot + "cdnjs.cloudflare.com/ajax/libs/cytoscape/2.6.12/cytoscape.min.js' type='text/javascript' %3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='" + prot + "cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js' type='text/javascript' %3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='" + prot + "cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.1.2/cytoscape-dagre.js' type='text/javascript' %3E%3C/script%3E"));
+        </script>
+
+        <style>
+            body {
+                font-family: helvetica;
+                font-size: 14px;
+            }
+
+            #cy {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 999;
+            }
+
+            h1 {
+                opacity: 0.5;
+                font-size: 1em;
+            }
+        </style>
+
+        <script>
+            $(function(){
+                var cy = window.cy = cytoscape({
+                    container: document.getElementById('cy'),
+                    boxSelectionEnabled: false,
+                    autounselectify: true,
+
+                    layout: {
+                        name: 'dagre'
+                    },
+
+                    style: cytoscape.stylesheet()
+                        .selector( 'node')
+                            .css({
+                                'width': 10,
+                                'height': 10,
+                                'content': 'data(label)',
+                                'text-valign': 'center',
+                                'text-halign': 'center',
+                                'text-opacity': 0.5,
+                            })
+                        .selector('node.PROCESS')
+                            .css({
+                                'width': 100,
+                                'height': 50,
+                                'text-opacity': 0.9,
+                                'background-color': '#009911'
+                            })
+                        .selector('node.OPERATOR')
+                            .css({
+                                'background-color': '#11479e',
+                                'text-halign': 'right',
+                            })
+                        .selector('node.ORIGIN')
+                            .css({
+                                'background-color': '#999999',
+                                'text-halign': 'right',
+                            })
+                        .selector('node.TERMINATION')
+                            .css({
+                                'background-color': '#999999',
+                                'text-halign': 'right',
+                            })
+                        .selector('edge')
+                            .css({
+                                'content': 'data(label)',
+                                'text-opacity': 0.5,
+                                'width': 4,
+                                'target-arrow-shape': 'triangle',
+                                'line-color': '#9dbaea',
+                                'target-arrow-color': '#9dbaea'
+                            }),
+
+elements: {
+nodes: [
+{ data: { id: 'p0', label: 'Channel.fromPath'}, classes: 'ORIGIN' },
+{ data: { id: 'p1', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p2', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p3', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p4', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p5', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p6'}, classes: 'NODE' },
+{ data: { id: 'p7', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p8'}, classes: 'NODE' },
+{ data: { id: 'p9', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p10'}, classes: 'NODE' },
+{ data: { id: 'p11', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p12'}, classes: 'NODE' },
+{ data: { id: 'p13', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p14'}, classes: 'ORIGIN' },
+{ data: { id: 'p15', label: 'NFCORE_METHYLSEQ:METHYLSEQ:INPUT_CHECK:SAMPLESHEET_CHECK'}, classes: 'PROCESS' },
+{ data: { id: 'p16', label: 'splitCsv'}, classes: 'OPERATOR' },
+{ data: { id: 'p17', label: 'map'}, classes: 'OPERATOR' },
+{ data: { id: 'p18', label: 'map'}, classes: 'OPERATOR' },
+{ data: { id: 'p19', label: 'groupTuple'}, classes: 'OPERATOR' },
+{ data: { id: 'p20', label: 'branch'}, classes: 'OPERATOR' },
+{ data: { id: 'p21', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p22', label: 'NFCORE_METHYLSEQ:METHYLSEQ:CAT_FASTQ'}, classes: 'PROCESS' },
+{ data: { id: 'p23', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p24', label: 'first'}, classes: 'OPERATOR' },
+{ data: { id: 'p25', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p26', label: 'NFCORE_METHYLSEQ:METHYLSEQ:FASTQC'}, classes: 'PROCESS' },
+{ data: { id: 'p27'}, classes: 'NODE' },
+{ data: { id: 'p28', label: 'first'}, classes: 'OPERATOR' },
+{ data: { id: 'p29', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p30', label: 'NFCORE_METHYLSEQ:METHYLSEQ:TRIMGALORE'}, classes: 'PROCESS' },
+{ data: { id: 'p31'}, classes: 'NODE' },
+{ data: { id: 'p32'}, classes: 'NODE' },
+{ data: { id: 'p33'}, classes: 'NODE' },
+{ data: { id: 'p34', label: 'first'}, classes: 'OPERATOR' },
+{ data: { id: 'p35', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p36', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p37'}, classes: 'ORIGIN' },
+{ data: { id: 'p38', label: 'NFCORE_METHYLSEQ:METHYLSEQ:BISMARK:BISMARK_ALIGN'}, classes: 'PROCESS' },
+{ data: { id: 'p39'}, classes: 'NODE' },
+{ data: { id: 'p40', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p41', label: 'NFCORE_METHYLSEQ:METHYLSEQ:BISMARK:SAMTOOLS_SORT_ALIGNED'}, classes: 'PROCESS' },
+{ data: { id: 'p42'}, classes: 'NODE' },
+{ data: { id: 'p43', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p44', label: 'NFCORE_METHYLSEQ:METHYLSEQ:BISMARK:BISMARK_DEDUPLICATE'}, classes: 'PROCESS' },
+{ data: { id: 'p45', label: 'join'}, classes: 'OPERATOR' },
+{ data: { id: 'p46', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p47', label: 'NFCORE_METHYLSEQ:METHYLSEQ:BISMARK:BISMARK_METHYLATIONEXTRACTOR'}, classes: 'PROCESS' },
+{ data: { id: 'p48'}, classes: 'NODE' },
+{ data: { id: 'p49'}, classes: 'NODE' },
+{ data: { id: 'p50', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p51', label: 'NFCORE_METHYLSEQ:METHYLSEQ:BISMARK:BISMARK_COVERAGE2CYTOSINE'}, classes: 'PROCESS' },
+{ data: { id: 'p52'}, classes: 'NODE' },
+{ data: { id: 'p53'}, classes: 'NODE' },
+{ data: { id: 'p54'}, classes: 'NODE' },
+{ data: { id: 'p55', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p56', label: 'join'}, classes: 'OPERATOR' },
+{ data: { id: 'p57', label: 'join'}, classes: 'OPERATOR' },
+{ data: { id: 'p58', label: 'NFCORE_METHYLSEQ:METHYLSEQ:BISMARK:BISMARK_REPORT'}, classes: 'PROCESS' },
+{ data: { id: 'p59', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p60', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p61', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p62', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p63', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p64', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p65', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p66', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p67', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p68', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p69', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p70', label: 'NFCORE_METHYLSEQ:METHYLSEQ:BISMARK:BISMARK_SUMMARY'}, classes: 'PROCESS' },
+{ data: { id: 'p71', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p72', label: 'NFCORE_METHYLSEQ:METHYLSEQ:BISMARK:SAMTOOLS_SORT_DEDUPLICATED'}, classes: 'PROCESS' },
+{ data: { id: 'p73'}, classes: 'NODE' },
+{ data: { id: 'p74', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p75', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p76', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p77', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p78', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p79', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p80', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p81', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p82', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p83', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p84', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p85', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p86', label: 'unique'}, classes: 'OPERATOR' },
+{ data: { id: 'p87', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p88'}, classes: 'ORIGIN' },
+{ data: { id: 'p89', label: 'NFCORE_METHYLSEQ:METHYLSEQ:QUALIMAP_BAMQC'}, classes: 'PROCESS' },
+{ data: { id: 'p90', label: 'first'}, classes: 'OPERATOR' },
+{ data: { id: 'p91', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p92', label: 'NFCORE_METHYLSEQ:METHYLSEQ:PRESEQ_LCEXTRAP'}, classes: 'PROCESS' },
+{ data: { id: 'p93'}, classes: 'NODE' },
+{ data: { id: 'p94', label: 'first'}, classes: 'OPERATOR' },
+{ data: { id: 'p95', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p96', label: 'unique'}, classes: 'OPERATOR' },
+{ data: { id: 'p97', label: 'collectFile'}, classes: 'OPERATOR' },
+{ data: { id: 'p98', label: 'NFCORE_METHYLSEQ:METHYLSEQ:CUSTOM_DUMPSOFTWAREVERSIONS'}, classes: 'PROCESS' },
+{ data: { id: 'p99'}, classes: 'NODE' },
+{ data: { id: 'p100'}, classes: 'NODE' },
+{ data: { id: 'p101', label: 'Channel.empty'}, classes: 'ORIGIN' },
+{ data: { id: 'p102'}, classes: 'ORIGIN' },
+{ data: { id: 'p103', label: 'collectFile'}, classes: 'OPERATOR' },
+{ data: { id: 'p104', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p105'}, classes: 'ORIGIN' },
+{ data: { id: 'p106', label: 'collectFile'}, classes: 'OPERATOR' },
+{ data: { id: 'p107', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p108', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p109', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p110', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p111', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p112', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p113', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p114', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p115', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p116', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p117', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p118', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p119', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p120', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p121', label: 'ifEmpty'}, classes: 'OPERATOR' },
+{ data: { id: 'p122', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p123', label: 'collect'}, classes: 'OPERATOR' },
+{ data: { id: 'p124', label: 'toList'}, classes: 'OPERATOR' },
+{ data: { id: 'p125', label: 'toList'}, classes: 'OPERATOR' },
+{ data: { id: 'p126', label: 'toList'}, classes: 'OPERATOR' },
+{ data: { id: 'p127', label: 'NFCORE_METHYLSEQ:METHYLSEQ:MULTIQC'}, classes: 'PROCESS' },
+{ data: { id: 'p128'}, classes: 'NODE' },
+{ data: { id: 'p129'}, classes: 'NODE' },
+{ data: { id: 'p130', label: 'toList'}, classes: 'OPERATOR' },
+{ data: { id: 'p131'}, classes: 'NODE' },
+{ data: { id: 'p132', label: 'mix'}, classes: 'OPERATOR' },
+{ data: { id: 'p133'}, classes: 'NODE' },
+],
+edges: [
+{ data: { source: 'p0', target: 'p124', label: 'ch_multiqc_config' } },
+{ data: { source: 'p1', target: 'p125', label: 'ch_multiqc_custom_config' } },
+{ data: { source: 'p2', target: 'p126', label: 'ch_multiqc_logo' } },
+{ data: { source: 'p3', target: 'p13', label: 'versions' } },
+{ data: { source: 'p4', target: 'p13', label: 'versions' } },
+{ data: { source: 'p5', target: 'p6', label: 'fasta' } },
+{ data: { source: 'p7', target: 'p8', label: 'bismark_index' } },
+{ data: { source: 'p9', target: 'p10', label: 'bwameth_index' } },
+{ data: { source: 'p11', target: 'p12', label: 'fasta_index' } },
+{ data: { source: 'p13', target: 'p21', label: 'versions' } },
+{ data: { source: 'p14', target: 'p15', label: 'samplesheet' } },
+{ data: { source: 'p15', target: 'p16'} },
+{ data: { source: 'p15', target: 'p21', label: 'versions' } },
+{ data: { source: 'p16', target: 'p17'} },
+{ data: { source: 'p17', target: 'p18', label: 'reads' } },
+{ data: { source: 'p18', target: 'p19'} },
+{ data: { source: 'p19', target: 'p20'} },
+{ data: { source: 'p20', target: 'p23'} },
+{ data: { source: 'p20', target: 'p22'} },
+{ data: { source: 'p21', target: 'p25', label: 'versions' } },
+{ data: { source: 'p22', target: 'p23'} },
+{ data: { source: 'p22', target: 'p24'} },
+{ data: { source: 'p23', target: 'p26', label: 'ch_cat_fastq' } },
+{ data: { source: 'p24', target: 'p25'} },
+{ data: { source: 'p25', target: 'p29', label: 'versions' } },
+{ data: { source: 'p26', target: 'p27'} },
+{ data: { source: 'p26', target: 'p120'} },
+{ data: { source: 'p26', target: 'p28'} },
+{ data: { source: 'p28', target: 'p29'} },
+{ data: { source: 'p29', target: 'p35', label: 'versions' } },
+{ data: { source: 'p23', target: 'p30', label: 'ch_cat_fastq' } },
+{ data: { source: 'p30', target: 'p38', label: 'reads' } },
+{ data: { source: 'p30', target: 'p118'} },
+{ data: { source: 'p30', target: 'p34'} },
+{ data: { source: 'p30', target: 'p33'} },
+{ data: { source: 'p30', target: 'p32'} },
+{ data: { source: 'p30', target: 'p31'} },
+{ data: { source: 'p34', target: 'p35'} },
+{ data: { source: 'p35', target: 'p87', label: 'versions' } },
+{ data: { source: 'p36', target: 'p40', label: 'versions' } },
+{ data: { source: 'p37', target: 'p38', label: 'bismark_index' } },
+{ data: { source: 'p38', target: 'p41'} },
+{ data: { source: 'p38', target: 'p45'} },
+{ data: { source: 'p38', target: 'p39'} },
+{ data: { source: 'p38', target: 'p40'} },
+{ data: { source: 'p40', target: 'p43', label: 'versions' } },
+{ data: { source: 'p41', target: 'p92', label: 'ch_bam' } },
+{ data: { source: 'p41', target: 'p42'} },
+{ data: { source: 'p41', target: 'p43'} },
+{ data: { source: 'p43', target: 'p46', label: 'versions' } },
+{ data: { source: 'p38', target: 'p44'} },
+{ data: { source: 'p44', target: 'p47', label: 'alignments' } },
+{ data: { source: 'p44', target: 'p45'} },
+{ data: { source: 'p44', target: 'p46'} },
+{ data: { source: 'p45', target: 'p56', label: 'alignment_reports' } },
+{ data: { source: 'p46', target: 'p50', label: 'versions' } },
+{ data: { source: 'p37', target: 'p47', label: 'bismark_index' } },
+{ data: { source: 'p47', target: 'p49'} },
+{ data: { source: 'p47', target: 'p48'} },
+{ data: { source: 'p47', target: 'p51'} },
+{ data: { source: 'p47', target: 'p56'} },
+{ data: { source: 'p47', target: 'p57'} },
+{ data: { source: 'p47', target: 'p50'} },
+{ data: { source: 'p50', target: 'p55', label: 'versions' } },
+{ data: { source: 'p37', target: 'p51', label: 'bismark_index' } },
+{ data: { source: 'p51', target: 'p54'} },
+{ data: { source: 'p51', target: 'p53'} },
+{ data: { source: 'p51', target: 'p52'} },
+{ data: { source: 'p51', target: 'p55'} },
+{ data: { source: 'p55', target: 'p59', label: 'versions' } },
+{ data: { source: 'p56', target: 'p57'} },
+{ data: { source: 'p57', target: 'p58'} },
+{ data: { source: 'p58', target: 'p84'} },
+{ data: { source: 'p58', target: 'p59'} },
+{ data: { source: 'p59', target: 'p71', label: 'versions' } },
+{ data: { source: 'p38', target: 'p60'} },
+{ data: { source: 'p60', target: 'p61'} },
+{ data: { source: 'p61', target: 'p70'} },
+{ data: { source: 'p45', target: 'p62', label: 'alignment_reports' } },
+{ data: { source: 'p62', target: 'p63'} },
+{ data: { source: 'p63', target: 'p70'} },
+{ data: { source: 'p45', target: 'p64', label: 'alignment_reports' } },
+{ data: { source: 'p64', target: 'p65'} },
+{ data: { source: 'p65', target: 'p70'} },
+{ data: { source: 'p47', target: 'p66'} },
+{ data: { source: 'p66', target: 'p67'} },
+{ data: { source: 'p67', target: 'p70'} },
+{ data: { source: 'p47', target: 'p68'} },
+{ data: { source: 'p68', target: 'p69'} },
+{ data: { source: 'p69', target: 'p70'} },
+{ data: { source: 'p70', target: 'p75'} },
+{ data: { source: 'p70', target: 'p71'} },
+{ data: { source: 'p71', target: 'p74', label: 'versions' } },
+{ data: { source: 'p44', target: 'p72', label: 'alignments' } },
+{ data: { source: 'p72', target: 'p89', label: 'ch_dedup' } },
+{ data: { source: 'p72', target: 'p73'} },
+{ data: { source: 'p72', target: 'p74'} },
+{ data: { source: 'p74', target: 'p86', label: 'versions' } },
+{ data: { source: 'p75', target: 'p77'} },
+{ data: { source: 'p45', target: 'p76', label: 'alignment_reports' } },
+{ data: { source: 'p76', target: 'p77'} },
+{ data: { source: 'p77', target: 'p79'} },
+{ data: { source: 'p45', target: 'p78', label: 'alignment_reports' } },
+{ data: { source: 'p78', target: 'p79'} },
+{ data: { source: 'p79', target: 'p81'} },
+{ data: { source: 'p47', target: 'p80'} },
+{ data: { source: 'p80', target: 'p81'} },
+{ data: { source: 'p81', target: 'p83'} },
+{ data: { source: 'p47', target: 'p82'} },
+{ data: { source: 'p82', target: 'p83'} },
+{ data: { source: 'p83', target: 'p85'} },
+{ data: { source: 'p84', target: 'p85'} },
+{ data: { source: 'p85', target: 'p116', label: 'ch_aligner_mqc' } },
+{ data: { source: 'p86', target: 'p87'} },
+{ data: { source: 'p87', target: 'p91', label: 'versions' } },
+{ data: { source: 'p88', target: 'p89', label: 'gff' } },
+{ data: { source: 'p89', target: 'p110'} },
+{ data: { source: 'p89', target: 'p90'} },
+{ data: { source: 'p90', target: 'p91'} },
+{ data: { source: 'p91', target: 'p95', label: 'versions' } },
+{ data: { source: 'p92', target: 'p93'} },
+{ data: { source: 'p92', target: 'p113'} },
+{ data: { source: 'p92', target: 'p94'} },
+{ data: { source: 'p94', target: 'p95'} },
+{ data: { source: 'p95', target: 'p96', label: 'versions' } },
+{ data: { source: 'p96', target: 'p97'} },
+{ data: { source: 'p97', target: 'p98'} },
+{ data: { source: 'p98', target: 'p100'} },
+{ data: { source: 'p98', target: 'p108'} },
+{ data: { source: 'p98', target: 'p99'} },
+{ data: { source: 'p101', target: 'p104', label: 'ch_multiqc_files' } },
+{ data: { source: 'p102', target: 'p103', label: 'ch_workflow_summary' } },
+{ data: { source: 'p103', target: 'p104'} },
+{ data: { source: 'p104', target: 'p107', label: 'ch_multiqc_files' } },
+{ data: { source: 'p105', target: 'p106', label: 'ch_methods_description' } },
+{ data: { source: 'p106', target: 'p107'} },
+{ data: { source: 'p107', target: 'p109', label: 'ch_multiqc_files' } },
+{ data: { source: 'p108', target: 'p109'} },
+{ data: { source: 'p109', target: 'p112', label: 'ch_multiqc_files' } },
+{ data: { source: 'p110', target: 'p111'} },
+{ data: { source: 'p111', target: 'p112'} },
+{ data: { source: 'p112', target: 'p115', label: 'ch_multiqc_files' } },
+{ data: { source: 'p113', target: 'p114'} },
+{ data: { source: 'p114', target: 'p115'} },
+{ data: { source: 'p115', target: 'p117', label: 'ch_multiqc_files' } },
+{ data: { source: 'p116', target: 'p117'} },
+{ data: { source: 'p117', target: 'p119', label: 'ch_multiqc_files' } },
+{ data: { source: 'p118', target: 'p119'} },
+{ data: { source: 'p119', target: 'p122', label: 'ch_multiqc_files' } },
+{ data: { source: 'p120', target: 'p121'} },
+{ data: { source: 'p121', target: 'p122'} },
+{ data: { source: 'p122', target: 'p123', label: 'ch_multiqc_files' } },
+{ data: { source: 'p123', target: 'p127'} },
+{ data: { source: 'p124', target: 'p127'} },
+{ data: { source: 'p125', target: 'p127'} },
+{ data: { source: 'p126', target: 'p127'} },
+{ data: { source: 'p127', target: 'p130'} },
+{ data: { source: 'p127', target: 'p129'} },
+{ data: { source: 'p127', target: 'p128'} },
+{ data: { source: 'p127', target: 'p132'} },
+{ data: { source: 'p130', target: 'p131'} },
+{ data: { source: 'p95', target: 'p132', label: 'versions' } },
+{ data: { source: 'p132', target: 'p133', label: 'versions' } },
+],
+},
+
+                });
+
+            });
+        </script>
+    </head>
+
+    <body>
+        <h1>Nextflow Cytoscape.js with Dagre</h1>
+        <div id="cy"></div>
+    </body>
+
+</html>

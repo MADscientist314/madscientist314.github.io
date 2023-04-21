@@ -31,3 +31,5 @@ gDNA49_WT_26349_gDNA49_R1	gDNA49_WT_26349_gDNA49_R1.fastq.gz	Conventional base c
 gDNA49_WT_26349_gDNA49_R2	gDNA49_WT_26349_gDNA49_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	104875614.0	0.0	151.0	24.0	67.30968294589977	151.0	pass	pass	fail	pass	fail	warn	pass	pass	warn	warn	warn
 gDNA50_WT_26350_gDNA50_R1	gDNA50_WT_26350_gDNA50_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	94064772.0	0.0	151.0	25.0	73.69114679082314	151.0	pass	pass	warn	pass	fail	pass	pass	pass	pass	pass	pass
 gDNA50_WT_26350_gDNA50_R2	gDNA50_WT_26350_gDNA50_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	94064772.0	0.0	151.0	24.0	75.64541334319638	151.0	pass	pass	fail	pass	fail	warn	pass	pass	pass	warn	warn
+gDNA9_HET_26270_gDNA9_R1	gDNA9_HET_26270_gDNA9_R1.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	23916874.0	0.0	151.0	25.0	77.20625428519536	151.0	pass	pass	warn	pass	fail	pass	pass	pass	pass	pass	warn
+gDNA9_HET_26270_gDNA9_R2	gDNA9_HET_26270_gDNA9_R2.fastq.gz	Conventional base calls	Sanger / Illumina 1.9	23916874.0	0.0	151.0	25.0	78.08988311637893	151.0	pass	pass	fail	pass	fail	warn	pass	pass	pass	warn	warn
